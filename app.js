@@ -1,45 +1,47 @@
-const inputTag = document.getElementById("input");
-const ul = document.getElementById("list");
-const addButton = document.getElementById("addButton");   
-const showHideButton = document.getElementById("showHide");
-addButton.onclick = addTask;
-showHideButton.onclick = showHide;
-
-
-
-
-
-
-function addTask() {
-    if ( inputTag.value != "") {
-        let inputValue = inputTag.value;
-        const li = document.createElement("li");
-        const removeButton = document.createElement("button");
-        const checkBox = document.createElement("input");
-        checkBox.setAttribute("type", "checkbox");
-        li.innerHTML = inputValue;
-        removeButton.innerHTML = "Remove";
-        li.appendChild(checkBox);
-        li.appendChild(removeButton);
-        ul.appendChild(li);
-        removeButton.onclick = removeTask;
-        inputTag.value = "";
-    }    
+var toDoList = {
+    inputTag: document.getElementById("input"),
+    ul: document.getElementById("list"),
+    addButton: document.getElementById("addButton"),   
+    showHideButton: document.getElementById("showHide"),
+    init: function() {
+        toDoList.addButton.addEventListener('click', toDoList.addTask);
+        toDoList.inputTag.addEventListener('keypress', toDoList.keyPress);
+        toDoList.showHideButton.addEventListener('click', toDoList.showHide);
+    },
+    addTask: function() {
+        if ( toDoList.inputTag.value != "" ) {
+            let inputValue = toDoList.inputTag.value;
+            const li = document.createElement("li");
+            const removeButton = document.createElement("button");
+            const checkBox = document.createElement("input");
+            checkBox.setAttribute("type", "checkbox");
+            li.innerHTML = inputValue;
+            removeButton.innerHTML = "Remove";
+            li.appendChild(checkBox);
+            li.appendChild(removeButton);
+            toDoList.ul.appendChild(li);
+            removeButton.onclick = toDoList.removeTask;
+            toDoList.inputTag.value = "";
+        }
+    },
+    keyPress: function(e) {
+        if ( e.key === "Enter") {
+            e.preventDefault();
+            toDoList.addButton.click();
+        }
+    },
+    removeTask: function() {
+        this.parentNode.remove();
+    },
+    showHide: function() {
+        if ( toDoList.ul.style.display == "none" ) {
+            toDoList.ul.style.display = "block";
+            toDoList.showHideButton.innerHTML = "Hide List";
+        } else {
+            toDoList.ul.style.display = "none";
+            toDoList.showHideButton.innerHTML = "Show List";
+        }
+    }
 }
 
-function removeTask() {
-    this.parentNode.remove();
-}
-
-function showHide() {
-    if ( ul.style.display == "none") {
-        ul.style.display = "block";
-        showHideButton.innerHTML = "Hide List";
-    } else {
-        ul.style.display = "none";
-        showHideButton.innerHTML = "Show List";
-    }  
-}
-
-
-
+window.onload = toDoList.init;
