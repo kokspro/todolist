@@ -20,13 +20,15 @@ body {
 }
 li {
     display: flex;
+    flex-direction: row;
     border: solid white 1px;
     border-radius: 5px;
     list-style-type: none;
     padding: 4px;
     font-size: 1.3rem;
     text-align: left;
-    margin-top: -1px;
+    margin-bottom: -1px;
+    align-items: center;
 }
 
 
