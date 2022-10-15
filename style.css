@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+header {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+body {
+    color: white;
+    background-color: black;
+    max-width: 480px;
+    text-align: center;
+    border: white solid 1px;
+    padding: 1%;
+}
+li {
+    display: flex;
+    border: solid white 1px;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 4px;
+    font-size: 1.3rem;
+    text-align: left;
+}
+.checkbox:checked + .remove {
+    background-color: green;
+    transition: 1s;
+}
+
+.remove {
+    margin-right: 0;
+    margin-left: 2px;
+    background-color: red;
+    padding: 4px;
+}
+.checkbox {
+    margin-right: 0;
+    margin-left: 1;
+}
+
+
+#addButton, #input {
+    padding: 3px;
+}
+#showHide {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 33%;
+    padding: 2px;
+}

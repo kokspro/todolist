@@ -13,8 +13,10 @@ var toDoList = {
             let inputValue = toDoList.inputTag.value;
             const li = document.createElement("li");
             const removeButton = document.createElement("button");
+            removeButton.setAttribute("class", "remove");
             const checkBox = document.createElement("input");
             checkBox.setAttribute("type", "checkbox");
+            checkBox.setAttribute("class", "checkbox");
             li.innerHTML = inputValue;
             removeButton.innerHTML = "Remove";
             li.appendChild(checkBox);
