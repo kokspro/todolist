@@ -16,6 +16,7 @@ var toDoList = {
             removeButton.setAttribute("class", "remove");
             const checkBox = document.createElement("input");
             checkBox.setAttribute("type", "checkbox");
+            checkBox.setAttribute("class", "checkbox");
             li.innerHTML = inputValue;
             removeButton.innerHTML = "Remove";
             li.appendChild(checkBox);

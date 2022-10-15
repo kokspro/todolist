@@ -17,6 +17,7 @@ var toDoList = {
             const checkBox = document.createElement("input");
             checkBox.setAttribute("type", "checkbox");
             checkBox.setAttribute("class", "checkbox");
+            checkBox.addEventListener("click", toDoList.checked);
             li.innerHTML = inputValue;
             removeButton.innerHTML = "Remove";
             li.appendChild(checkBox);
@@ -24,6 +25,15 @@ var toDoList = {
             toDoList.ul.appendChild(li);
             removeButton.onclick = toDoList.removeTask;
             toDoList.inputTag.value = "";
+        }
+    },
+    checked: function() {
+        if (this.parentNode.style.backgroundColor !== "green") {
+            this.parentNode.style.backgroundColor = "green";
+            this.parentNode.style.color = "black";
+        } else {
+            this.parentNode.style.backgroundColor = "black";
+            this.parentNode.style.color = "white";
         }
     },
     keyPress: function(e) {

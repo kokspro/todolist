@@ -11,9 +11,10 @@ header {
 body {
     color: white;
     background-color: black;
-    max-width: 480px;
+    max-width: 768px;
     text-align: center;
     border: white solid 1px;
+    border-radius: 1rem;
     padding: 1%;
 }
 li {
@@ -25,14 +26,11 @@ li {
     font-size: 1.3rem;
     text-align: left;
 }
-.checkbox:checked + .remove {
-    background-color: green;
-    transition: 1s;
-}
+
 
 .remove {
     margin-right: 0;
-    margin-left: 2px;
+    margin-left: 5px;
     background-color: red;
     padding: 4px;
 }
