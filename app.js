@@ -30,7 +30,7 @@ var toDoList = {
     checked: function() {
         if (this.parentNode.style.backgroundColor !== "green") {
             this.parentNode.style.backgroundColor = "green";
-            this.parentNode.style.color = "black";
+            this.parentNode.style.color = "black";         
         } else {
             this.parentNode.style.backgroundColor = "black";
             this.parentNode.style.color = "white";
