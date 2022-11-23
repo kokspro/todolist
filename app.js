@@ -29,13 +29,6 @@ var toDoList = {
     },
     checked: function() {
         this.parentNode.classList.toggle('toggle');
-        // if (this.parentNode.style.backgroundColor !== "green") {
-        //     this.parentNode.style.backgroundColor = "green";
-        //     this.parentNode.style.color = "black";         
-        // } else {
-        //     this.parentNode.style.backgroundColor = "black";
-        //     this.parentNode.style.color = "white";
-        // }
     },
     keyPress: function(e) {
         if ( e.key === "Enter") {
