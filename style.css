@@ -16,7 +16,7 @@ body {
     text-align: center;
     border: white solid 2px;
     border-radius: 1.3rem;
-    padding: 1%;
+    padding: 1rem;
 }
 li {
     display: flex;
@@ -53,4 +53,9 @@ li {
     margin-top: 15px;
     margin-bottom: 15px;
     width: 33%;
+}
+
+.toggle {
+    background-color: green;
+    color: black;
 }
